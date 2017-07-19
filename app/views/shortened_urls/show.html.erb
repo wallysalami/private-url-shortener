@@ -1,0 +1,12 @@
+<p>
+  <strong>Short URI:</strong>
+  <%= @shortened_url.short_uri %>
+</p>
+
+<p>
+  <strong>Destination URL:</strong>
+  <%= @shortened_url.destination_url %>
+</p>
+
+<%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
+<%= link_to 'Back', shortened_urls_path %>

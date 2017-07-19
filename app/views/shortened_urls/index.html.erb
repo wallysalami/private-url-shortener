@@ -1,0 +1,22 @@
+<h1>Listing Shortened Urls</h1>
+
+<%= link_to 'New Shortened Url', new_shortened_url_path %>
+
+<table>
+  <tr>
+    <th>Short URI</th>
+    <th>Destination URL</th>
+  </tr>
+
+  <% @shortened_urls.each do |url| %>
+    <tr>
+      <td><%= url.short_uri %></td>
+      <td><%= url.destination_url %></td>
+      <td><%= link_to 'Show',shortened_url_path(url) %></td>
+      <td><%= link_to 'Edit', edit_shortened_url_path(url) %></td>
+      <td><%= link_to 'Destroy',shortened_url_path(url),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
