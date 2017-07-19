@@ -1,6 +1,10 @@
 class RedirectController < ApplicationController
   def index
     @url = ShortenedUrl.find_by(:short_uri => params[:short_uri])
-    redirect_to @url.destination_url
+    if @url
+      redirect_to @url.destination_url
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end
