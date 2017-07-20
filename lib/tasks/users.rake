@@ -7,9 +7,9 @@ namespace :users do
     user = User.new()
     
     print 'Full Name: '
-    user.name = STDIN.gets.strip
-    print 'Email: '
-    user.email = STDIN.gets.strip
+    user.full_name = STDIN.gets.strip
+    print 'Username: '
+    user.username = STDIN.gets.strip
     print 'Password: '
     user.password = STDIN.noecho(&:gets).chomp
     print "\nRepeat Password: "
@@ -28,12 +28,12 @@ namespace :users do
   task :delete => :environment do
     # Find user with command line arguments
     user = nil
-    if ENV['email'] != nil
-      user = User.find_by(:email => ENV['email'])
+    if ENV['username'] != nil
+      user = User.find_by(:username => ENV['username'])
     elsif ENV['id'] != nil
       user = User.find_by(:id => ENV['id'])
     else
-      puts 'Usage: "rake users:delete email=<email>" or "rake users:delete id=<id>".'
+      puts 'Usage: "rake users:delete username=<username>" or "rake users:delete id=<id>".'
       exit 1
     end
 
