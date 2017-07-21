@@ -18,6 +18,10 @@ class ShortenedUrlPolicy
     has_access
   end
 
+  def destroy?
+    has_access
+  end
+
   private
 
   def has_access

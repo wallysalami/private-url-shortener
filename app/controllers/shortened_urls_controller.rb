@@ -49,7 +49,7 @@ class ShortenedUrlsController < ApplicationController
     
     @shortened_url.destroy
 
-    redirect_to shortened_url_path
+    redirect_to shortened_urls_path
   end
 
   private
