@@ -4,11 +4,13 @@
     <title>URL Shortener</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>

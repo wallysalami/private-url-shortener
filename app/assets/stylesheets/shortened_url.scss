@@ -1,3 +1,27 @@
 // Place all the styles related to the ShortenedUrl controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    display: inline-block;
+}
+
+#add-url-button {
+    float: right;
+}
+
+#urls-table td {
+    vertical-align: middle;
+}
+
+#urls-table>thead>tr>th {
+    white-space: nowrap;
+}
+
+#urls-table>tbody>tr>:nth-last-child(-n+3) {
+    width: 1px;
+    white-space: nowrap;
+}
+
+#main-container {
+    padding: 0px 15px 10px;
+}

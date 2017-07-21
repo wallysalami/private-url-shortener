@@ -11,5 +11,76 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
+ *= require datatables/dataTables.bootstrap
  *= require_self
  */
+
+body {
+    min-width: 300px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.form-control {
+    padding: 6px 9px;
+}
+
+@media (min-width: 400px) {
+    .navbar-collapse.collapse {
+        display: block !important;
+        /* height: auto !important; */
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+    .navbar-nav {
+        float: left;
+        margin: 0;
+    }
+    .navbar-right {
+        float: right !important;
+    }
+    .navbar-nav>li>a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .navbar-header {
+        float: left;
+    }
+    .navbar-collapse {
+        width: auto;
+        border-top: 0;
+        box-shadow: none;
+    }
+}
+
+.table-responsive {
+    width: auto;
+    overflow-x: none;
+    overflow-y: none;
+}
+
+.table-responsive>.table>tbody>tr>td {
+    white-space: normal;
+}
+
+@media (max-width: 399px) {
+    .navbar-toggle {
+        display: block;
+    }
+    .table-responsive {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .table-responsive>.table>tbody>tr>td {
+        white-space: nowrap;
+    }
+}

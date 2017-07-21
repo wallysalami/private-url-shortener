@@ -1,5 +1,6 @@
 class ShortenedUrlsController < ApplicationController
   before_action :check_logged_user
+  layout 'shortened_url'
   
   def index
       x = ShortenedUrlPolicy
