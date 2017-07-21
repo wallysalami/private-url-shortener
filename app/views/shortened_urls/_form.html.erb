@@ -16,6 +16,7 @@
     <div class="form-group">
         <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
         <%= form.text_field :short_uri, :class => "form-control" %>
+        <button type='button' id='generate-random-uri-button' class='btn btn-default'>Generate Random URI</button>
     </div>
 
     <div class="form-group">
@@ -28,3 +29,18 @@
         <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-default" %>
     </p>
 <% end %>
+
+<script>
+    document.getElementById('generate-random-uri-button').onclick = function ()
+    {
+        var possibleCharacters = '23456789abcdefghijkmnopqrstuwvxyz';
+
+        var randomIndexes = Array(6).fill().map(
+            value => Math.floor(Math.random() * possibleCharacters.length)
+        );
+
+        var randomString = randomIndexes.map( index => possibleCharacters[index]).join('');
+
+        document.getElementById('shortened_url_short_uri').value = randomString;
+    }
+</script>
