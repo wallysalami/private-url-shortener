@@ -8,5 +8,19 @@
   <%= @shortened_url.destination_url %>
 </p>
 
+<div id='qr-code-div'></div>
+
 <%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
 <%= link_to 'Back', shortened_urls_path %>
+
+<script>
+  new QRCode(
+    document.getElementById("qr-code-div"),
+    {
+      text: "<%= @shortened_url.destination_url %>",
+      <%# useSVG: true, %>
+      width: 256,
+      height: 256
+    }
+  );
+</script>
