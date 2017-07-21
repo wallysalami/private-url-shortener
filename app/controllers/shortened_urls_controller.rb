@@ -4,7 +4,7 @@ class ShortenedUrlsController < ApplicationController
   
   def index
       x = ShortenedUrlPolicy
-      @shortened_urls = ShortenedUrl.where(user_id: current_user.id)
+      @shortened_urls = ShortenedUrl.where(user_id: current_user.id).order(:short_uri)
   end
 
   def show
