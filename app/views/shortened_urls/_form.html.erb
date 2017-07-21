@@ -1,30 +1,30 @@
 <%= form_for @shortened_url do |form| %>
 
-<% if @shortened_url.errors.any? %>
-    <div id="error_explanation">
-        <h2>
-            <%= pluralize(@shortened_url.errors.count, "error") %> prohibited
-            this URL from being saved:
-        </h2>
-        <ul>
-            <% @shortened_url.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-        </ul>
-    </div>
+    <% if @shortened_url.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <h4>
+                <%= pluralize(@shortened_url.errors.count, "validation error") %>:
+            </h4>
+            <ul>
+                <% @shortened_url.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
     <% end %>
 
-    <p>
-        <%= form.label :short_uri %><br>
-        <%= form.text_field :short_uri %>
-    </p>
+    <div class="form-group">
+        <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
+        <%= form.text_field :short_uri, :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :destination_url, 'Destination URL', :class => "control-label" %>
+        <%= form.url_field :destination_url, :class => "form-control" %>
+    </div>
 
     <p>
-        <%= form.label :destination_url %><br>
-        <%= form.text_field :destination_url %>
-    </p>
-
-    <p>
-        <%=form.submit %>
+        <%= form.submit 'Save', :class => "btn btn-primary" %>
+        <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-default" %>
     </p>
 <% end %>
