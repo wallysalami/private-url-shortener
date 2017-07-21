@@ -26,7 +26,7 @@ class ShortenedUrlsController < ApplicationController
       @shortened_url.user_id = current_user.id
 
       if @shortened_url.save
-          redirect_to @shortened_url
+          redirect_to shortened_urls_path
       else
           render 'new'
       end
