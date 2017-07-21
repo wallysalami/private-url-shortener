@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720181947) do
+ActiveRecord::Schema.define(version: 20170721150812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "shortened_url_accesses", force: :cascade do |t|
+    t.bigint "shortened_url_id", null: false
+    t.string "ip", null: false
+    t.string "referer"
+    t.string "country_name"
+    t.string "region_code"
+    t.string "region_name"
+    t.string "city"
+    t.string "time_zone"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shortened_url_id"], name: "index_shortened_url_accesses_on_shortened_url_id"
+  end
 
   create_table "shortened_urls", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -34,5 +50,6 @@ ActiveRecord::Schema.define(version: 20170720181947) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "shortened_url_accesses", "shortened_urls"
   add_foreign_key "shortened_urls", "users"
 end
