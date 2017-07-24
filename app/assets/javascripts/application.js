@@ -14,5 +14,6 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
-//= require qrcode.min
+//= require tether.min
 //= require bootstrap.min
+//= require qrcode.min

@@ -9,17 +9,13 @@
     text-align: left;
     display: inline-block;
     width: 300px;
-    padding: 15px 25px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     margin-top: 20px;
 }
 
-#login-box>h1 {
+#login-box>.card-block>h1 {
     margin-bottom: 30px;
 }
 
-#login-box>form>input[type=submit] {
+#login-box>.card-block>form>input[type=submit] {
     margin-top: 20px;
 }

@@ -1,21 +1,20 @@
-<!-- app/views/sessions/new.html.erb -->
-
 <div id='login-container'>
-  <div id='login-box'>
-    <h1>Login</h1>
+  <div id='login-box' class='card'>
+    <div class="card-block">
+      <h1>Login</h1>
 
-    <%= form_tag '/login' do %>
-      <div class="field form-group">
-        <%= label_tag(:username, "Username", :class => 'control-label') %>
-        <%= text_field_tag :username, "", :class => "form-control" %>
-      </div>
-      <div class="field form-group">
-        <%= label_tag(:password, "Password", class: 'control-label') %>
-        <%= password_field_tag :password, "", :class => "form-control" %>
-      </div>
-      
-      <%= submit_tag "Submit", :class => "btn btn-primary" %>
-
-    <% end %>
+      <%= form_tag '/login' do %>
+        <div class="field form-group">
+          <%= label_tag(:username, "Username", :class => 'control-label') %>
+          <%= text_field_tag :username, "", :class => "form-control" %>
+        </div>
+        <div class="field form-group">
+          <%= label_tag(:password, "Password", class: 'control-label') %>
+          <%= password_field_tag :password, "", :class => "form-control" %>
+        </div>
+        
+        <%= submit_tag "Submit", :class => "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

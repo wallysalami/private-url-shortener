@@ -17,8 +17,8 @@
         <tr>
           <td><%= url.short_uri %></td>
           <td><%= url.destination_url %></td>
-          <td><%= link_to 'Show',shortened_url_path(url), :class => 'btn btn-default' %></td>
-          <td><%= link_to 'Edit', edit_shortened_url_path(url), :class => 'btn btn-default' %></td>
+          <td><%= link_to 'Show',shortened_url_path(url), :class => 'btn btn-secondary' %></td>
+          <td><%= link_to 'Edit', edit_shortened_url_path(url), :class => 'btn btn-secondary' %></td>
           <td><%= link_to 'Destroy',shortened_url_path(url),
                   method: :delete,
                   data: { confirm: 'Are you sure?' },

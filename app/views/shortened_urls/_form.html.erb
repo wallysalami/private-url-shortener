@@ -14,9 +14,14 @@
     <% end %>
 
     <div class="form-group">
-        <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
-        <%= form.text_field :short_uri, :class => "form-control" %>
-        <button type='button' id='generate-random-uri-button' class='btn btn-default'>Generate Random URI</button>
+    <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
+        <div class="input-group">
+            
+            <%= form.text_field :short_uri, :class => "form-control" %>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" id='generate-random-uri-button' type="button">Generate Random URI</button>
+            </span>
+        </div>
     </div>
 
     <div class="form-group">
@@ -26,7 +31,7 @@
 
     <p>
         <%= form.submit 'Save', :class => "btn btn-primary" %>
-        <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-default" %>
+        <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-secondary" %>
     </p>
 <% end %>
 
