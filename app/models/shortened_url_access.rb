@@ -35,4 +35,46 @@ class ShortenedUrlAccess < ApplicationRecord
 
     save
   end
+
+  def self.group_by_date(accesses)
+    grouped_accesses = []
+    previous_date = nil
+    accesses.each do |access|
+      if access.created_at.to_date != previous_date
+        previous_date = access.created_at.to_date
+        grouped_accesses.push(
+          {:date => previous_date, :accesses => []}
+        )
+      end
+      
+      grouped_accesses[-1][:accesses].push(access)
+    end
+
+    grouped_accesses
+  end
+
+  def full_location
+    location = '';
+    if country_name != nil
+      location = country_name;
+    end
+
+    if region_code != nil
+      if country_name != nil
+        location = ' – ' + location;
+      end
+      location = region_code + location;
+    end
+
+    if city != nil
+      if region_code != nil
+        location = ', ' + location;
+      elsif country_name != nil
+        location = ' – ' + location;
+      end
+      location = city + location;
+    end
+
+    location
+  end
 end

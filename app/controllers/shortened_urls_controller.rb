@@ -10,6 +10,9 @@ class ShortenedUrlsController < ApplicationController
   def show
       @shortened_url = ShortenedUrl.find(params[:id])
       authorize @shortened_url
+
+      @grouped_accesses = ShortenedUrlAccess.group_by_date(@shortened_url.shortened_url_access)
+      @base_url = request.host
   end
 
   def new

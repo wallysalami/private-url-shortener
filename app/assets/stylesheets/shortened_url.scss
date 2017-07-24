@@ -26,3 +26,35 @@ h1 {
     margin-top: 20px;
     padding: 0px 15px 10px;
 }
+
+.access-log-list:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.col.access-other-info-column {
+    width: calc(100% - 30px);
+}
+
+.access-time-column {
+    width: 50px
+}
+
+.access-time-column>.access-time {
+    padding: 7px;
+}
+
+.access-ip {
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.access-location {
+    padding-top: 3px;
+}
+
+.access-referer-link {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}

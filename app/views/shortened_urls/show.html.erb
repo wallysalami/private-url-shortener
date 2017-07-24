@@ -1,17 +1,57 @@
-<p>
-  <strong>Short URI:</strong>
-  <%= @shortened_url.short_uri %>
-</p>
+<div class='row'>
+  <div style='padding-left: 15px'>
+    <%= @base_url + '/' + @shortened_url.short_uri %>
+  </div>
+  <div class='col-sm hidden-sm-up'>
+    ↓
+  </div>
+  <div class='col-sm'>
+    <span class='hidden-xs-down' style='padding-right: 15px'>
+      →
+    </span>
+    <%= link_to @shortened_url.destination_url %>
+  </div>
+</div>
 
-<p>
-  <strong>Destination URL:</strong>
-  <%= @shortened_url.destination_url %>
-</p>
+<nav style='margin: 15px 0px 30px;'>
+  <%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
+  <%= link_to 'Back', shortened_urls_path %>
+</nav>
+
+<% @grouped_accesses.each do |access_on_current_date| %>
+  <div class="card access-log-list">
+    <div class="card-header">
+      Accesses on <%= I18n.l access_on_current_date[:date], format: :long %>
+    </div>
+    <ol class="list-group list-group-flush">
+      <% access_on_current_date[:accesses].each do |access| %>
+        <li class="list-group-item">
+          <div class="access-time-column"> 
+            <%= time_tag access.created_at, access.created_at.strftime("%H:%M"), class: "badge badge-pill badge-default access-time"%>
+          </div>
+
+          <div class="col access-other-info-column">
+            <div class='row'>
+              <div class='access-ip'>
+                <%= access.ip %>
+              </div>
+              <small class='col-sm access-location'>
+                <%= access.full_location %>
+              </small>
+            </div>
+
+            <small>
+              <%= link_to access.referer, '', class: 'access-referer-link' %>
+            </small>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
+
 
 <div id='qr-code-div'></div>
-
-<%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
-<%= link_to 'Back', shortened_urls_path %>
 
 <script>
   new QRCode(

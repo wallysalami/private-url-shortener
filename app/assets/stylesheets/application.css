@@ -24,3 +24,7 @@ h1 {
     font-size: 30px;
     margin-top: 0px;
 }
+
+.list-group-flush {
+    margin-top: -1px;
+}
