@@ -58,7 +58,7 @@ class ShortenedUrlsController < ApplicationController
   private
   
   def shortened_url_params
-      params.require(:shortened_url).permit(:destination_url, :short_uri)
+      params.require(:shortened_url).permit(:destination_url, :short_uri, :title, :description, :is_locked, :show_preview_page)
   end
 
   def load_shortened_url

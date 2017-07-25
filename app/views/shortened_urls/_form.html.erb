@@ -1,51 +1,74 @@
 <%= form_for @shortened_url do |form| %>
-
-    <% if @shortened_url.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-            <h4>
-                <%= pluralize(@shortened_url.errors.count, "validation error") %>:
-            </h4>
-            <ul>
-                <% @shortened_url.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <div class="form-group">
-    <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
-        <div class="input-group">
-            
-            <%= form.text_field :short_uri, :class => "form-control" %>
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" id='generate-random-uri-button' type="button">Generate Random URI</button>
-            </span>
-        </div>
+  <% if @shortened_url.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4>
+        <%= pluralize(@shortened_url.errors.count, "validation error") %>:
+      </h4>
+      <ul>
+        <% @shortened_url.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
 
-    <div class="form-group">
-        <%= form.label :destination_url, 'Destination URL', :class => "control-label" %>
-        <%= form.url_field :destination_url, :class => "form-control" %>
+  <div class='row'>
+    <div class="form-group col-sm-4">
+      <%= form.label :title, 'Title', :class => "control-label" %>
+      <%= form.text_field :title, :class => "form-control" %>
     </div>
+    <div class="form-group col-sm-8">
+      <%= form.label :description, 'Description', :class => "control-label" %>
+      <%= form.text_field :description, :class => "form-control" %>
+    </div>
+  </div>
 
-    <p>
-        <%= form.submit 'Save', :class => "btn btn-primary" %>
-        <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-secondary" %>
-    </p>
+  <div class='row'>
+    <div class="form-group col-sm">
+      <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
+      <div class="input-group">
+        <span class="input-group-addon">janks.link/</span>
+        <%= form.text_field :short_uri, :class => "form-control" %>
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" id='generate-random-uri-button' type="button">Autogenerate</button>
+        </span>
+      </div>
+    </div>
+    
+    <div class="form-group col-sm">
+      <%= form.label :destination_url, 'Destination URL', :class => "control-label" %>
+      <%= form.url_field :destination_url, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <label class="form-check-label">
+      <%= form.check_box :is_locked, class: 'form-check-input' %> Locked
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <label class="form-check-label">
+      <%= form.check_box :show_preview_page, class: 'form-check-input' %> Show Preview Page
+    </label>
+  </div>
+
+  <div class='save-cancel-container'>
+      <%= form.submit 'Save', :class => "btn btn-primary" %>
+      <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-secondary" %>
+  </div>
 <% end %>
 
 <script>
-    document.getElementById('generate-random-uri-button').onclick = function ()
-    {
-        var possibleCharacters = '23456789abcdefghijkmnopqrstuwvxyz';
+  document.getElementById('generate-random-uri-button').onclick = function ()
+  {
+    var possibleCharacters = '23456789abcdefghijkmnopqrstuwvxyz';
 
-        var randomIndexes = Array(6).fill().map(
-            value => Math.floor(Math.random() * possibleCharacters.length)
-        );
+    var randomIndexes = Array(6).fill().map(
+      value => Math.floor(Math.random() * possibleCharacters.length)
+    );
 
-        var randomString = randomIndexes.map( index => possibleCharacters[index]).join('');
+    var randomString = randomIndexes.map(index => possibleCharacters[index]).join('');
 
-        document.getElementById('shortened_url_short_uri').value = randomString;
-    }
+    document.getElementById('shortened_url_short_uri').value = randomString;
+  }
 </script>

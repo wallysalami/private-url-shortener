@@ -14,7 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap.min";
+@import "bootstrap.min";
+@import "css/font-awesome.min";
 
 body {
     min-width: 300px;
@@ -23,6 +24,7 @@ body {
 h1 {
     font-size: 30px;
     margin-top: 0px;
+    /* margin-bottom: 1.5rem; */
 }
 
 .list-group-flush {

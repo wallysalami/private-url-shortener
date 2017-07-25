@@ -6,4 +6,7 @@ class ShortenedUrl < ApplicationRecord
   validates :destination_url, :presence => true
   validates_format_of :short_uri, :with => URI::DEFAULT_PARSER.regexp[:REL_URI]
   validates_format_of :destination_url, :with => URI::DEFAULT_PARSER.regexp[:ABS_URI]
+  validates :title, :presence => true
+  validates :is_locked, inclusion: { in: [ true, false ] }
+  validates :show_preview_page, inclusion: { in: [ true, false ] }
 end

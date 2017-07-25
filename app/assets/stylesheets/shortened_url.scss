@@ -58,3 +58,27 @@ h1 {
     text-overflow: ellipsis;
     display: block;
 }
+
+.save-cancel-container {
+    margin-top: 30px;
+}
+
+.save-cancel-container > * {
+    width: 90px;
+}
+
+.save-cancel-container > input[type=submit] {
+    margin-right: 5px;
+}
+
+dt.shortened-url-title>h1 {
+    margin-bottom: 0px;
+}
+
+dd.shortened-url-description {
+    margin-bottom: 0px;
+}
+
+.shortened-url-links {
+    margin-bottom: 20px;
+}
