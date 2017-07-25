@@ -36,8 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 #gem 'acts_as_paranoid', '~> 0.5.0'
 # Use Pundit as authorization system.
 gem "pundit"
-# Use Bootstrap for the interface via AdminLTE
-gem 'adminlte-rails'
+# Use Font Awesome for icons
+gem "font-awesome-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
