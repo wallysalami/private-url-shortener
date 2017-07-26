@@ -9,4 +9,13 @@ class ShortenedUrl < ApplicationRecord
   validates :title, :presence => true
   validates :is_locked, inclusion: { in: [ true, false ] }
   validates :show_preview_page, inclusion: { in: [ true, false ] }
+
+  def last_access_date
+    first_access = self.shortened_url_access.first
+    if first_access != nil
+      first_access.created_at
+    else
+      nil
+    end
+  end
 end

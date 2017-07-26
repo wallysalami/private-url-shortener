@@ -11,21 +11,51 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require bootstrap.min
  *= require font-awesome
+ *= require_self
  */
 
+html {
+   height: 100%;
+}
+
 body {
+    min-height: 100%;
     min-width: 300px;
 }
 
 h1 {
     font-size: 30px;
     margin-top: 0px;
-    /* margin-bottom: 1.5rem; */
 }
 
 .list-group-flush {
     margin-top: -1px;
+}
+
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-secondary.dropdown-toggle {
+    color: #555;
+    border-color: #888;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
+.col {
+    overflow: hidden;
+}
+
+.text-truncate {
+    width: 100%;
+    display: block;
+}
+
+#center-container {
+    width: 100%;
+    max-width: 1000px;
+    flex: 1;
 }

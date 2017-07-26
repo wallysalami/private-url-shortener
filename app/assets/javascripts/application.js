@@ -17,3 +17,7 @@
 //= require tether.min
 //= require bootstrap.min
 //= require qrcode.min
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

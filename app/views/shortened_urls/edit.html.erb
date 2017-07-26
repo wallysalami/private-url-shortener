@@ -1,3 +1,7 @@
-<h1>Edit Shortened URL</h1>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to 'Home', shortened_urls_path %></li>
+  <li class="breadcrumb-item active"><%= link_to @shortened_url.title, shortened_url_path(@shortened_url) %>
+  <li class="breadcrumb-item active">Edit</li>
+</ol>
 
 <%= render 'form' %>

@@ -1,5 +1,10 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to 'Home', shortened_urls_path %></li>
+  <li class="breadcrumb-item active"><%= @shortened_url.title %></li>
+</ol>
+
 <div class='row'>
-  <div class='col-md'>
+  <div class='col-md-6'>
     <div class='sticky-top card card-block' id='shortened-url-info'>
       <dl>
         <dt class='shortened-url-title'>
@@ -14,43 +19,52 @@
         <div>
            <%= @base_url + '/' + @shortened_url.short_uri %>
         </div>
-        <div>
-          <i class="fa fa-share fa-flip-vertical"></i> 
-          <%= link_to @shortened_url.destination_url %>
+        <div class='text-truncate'>
+          <i class="fa fa-fw fa-share fa-flip-vertical"></i> <%= link_to @shortened_url.destination_url %>
         </div>
       </div>
 
-      <% if @shortened_url.is_locked %>
-        <span class='text-danger'>
-          <i class="fa fa-lock"></i> URL Locked
-        </span>
-      <% else %>
-        <span class='text-success'>
-          <i class="fa fa-unlock"></i> URL Unlocked
-        </span>
-      <% end %>
+      <div class="row">
+        <div class='col-sm-8'>
+          <% if @shortened_url.is_locked %>
+            <div class='text-danger'>
+              <i class="fa fa-lock fa-fw"></i> URL Locked
+            </div>
+          <% else %>
+            <div class='text-success'>
+              <i class="fa fa-unlock fa-fw"></i> URL Unlocked
+            </div>
+          <% end %>
 
-      <% if @shortened_url.show_preview_page %>
-        <span class='text-success'>
-          <i class="fa fa-file-text-o"></i> Shows Preview Page
-        </span>
-      <% else %>
-        <span class='text-danger'>
-          <i class="fa fa-times"></i> Does Not Show Preview Page
-        </span>
-      <% end %>
+          <% if @shortened_url.show_preview_page %>
+            <span>
+              <i class="fa fa-file-text-o fa-fw"></i> Shows Preview Page
+            </span>
+          <% else %>
+            <span>
+              <i class="fa fa-times fa-fw"></i> No Preview Page
+            </span>
+          <% end %>
 
-      <nav style='margin-top: 15px'>
-        <%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
-        <%= link_to 'Back', shortened_urls_path %>
-      </nav>
+          <nav style='margin-top: 15px'>
+            <a class="btn btn-secondary" href="<%= edit_shortened_url_path(@shortened_url) %>">
+                <i class="fa fa-pencil fa-fw"></i> Edit
+            </a>
+            <a class="btn btn-danger" href="<%= edit_shortened_url_path(@shortened_url) %>">
+                <i class="fa fa-trash fa-fw"></i> Delete
+            </a>
+          </nav>
+        </div>
+
+        <div class='col-sm-4 hidden-xs-down' style='text-align: right'>
+          <div class='d-inline-block' id='qr-code-div'></div>
+        </div>
+      </div>
     </div>
-
-    <div id='qr-code-div'></div>
   </div>
 
   
-  <div class='col-md'>
+  <div class='col-md-6'>
     <% @grouped_accesses.each do |access_on_current_date| %>
       <div class="card access-log-list">
         <div class="card-header sticky-top">
@@ -91,8 +105,8 @@
     {
       text: "<%= @shortened_url.destination_url %>",
       <%# useSVG: true, %>
-      width: 256,
-      height: 256
+      width: 100,
+      height: 100
     }
   );
 </script>

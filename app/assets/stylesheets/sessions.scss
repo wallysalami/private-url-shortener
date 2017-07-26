@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #login-container {
     text-align: center;
+    min-height: 100vh
 }
 
 #login-box {
     text-align: left;
     display: inline-block;
     width: 300px;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 #login-box>.card-block>h1 {
