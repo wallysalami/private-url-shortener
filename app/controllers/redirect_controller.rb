@@ -1,9 +1,12 @@
 class RedirectController < ApplicationController
   def index
-    @url = ShortenedUrl.find_by(:short_uri => params[:short_uri])
+    # fullpath starts with /, :short_uri doesn't
+    @url = ShortenedUrl.find_by(:short_uri => request.fullpath[1..-1])
+
     if @url
       if @url.is_locked || @url.show_preview_page
-        render 'preview'
+        # :formats prevents an error if path ends with some extension (like .zip)
+        render 'redirect/preview', :formats => 'html'
       else
         redirect_to @url.destination_url
       end
