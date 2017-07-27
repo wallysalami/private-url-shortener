@@ -1,0 +1,24 @@
+<div class='d-flex justify-content-center align-items-center'>
+  <div style='min-width: 280px; max-width: 700px' class='card m-5'>
+    <div class="card-block">
+      <dl>
+        <dt class='shortened-url-title'>
+          <h1><%= @url.title %></h1>
+        </dt>
+        <dd class='shortened-url-description mt-3'>
+          <%= @url.description %>
+        </dd>
+      </dl>
+
+      <% if @url.is_locked %>
+        <div class='text-center'>
+          <i class='fa fa-lock fa-4x text-danger'></i>
+        </div>
+      <% else %>
+        <%= bootstrap_button layout: 'primary', icon: 'arrow-right',
+            label: 'Access', url: @url.destination_url
+        %>
+      <% end %>
+    </div>
+  </div>
+</div>
