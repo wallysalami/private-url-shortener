@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
-
   def new
+    if current_user != nil
+      redirect_to '/my-urls'
+    end
   end
 
   def create

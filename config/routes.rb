@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Main page (to be implemented)
-  # root to: ''
+  root to: 'application#index'
   
   # Signup routes
   get '/signup' => 'users#new'
