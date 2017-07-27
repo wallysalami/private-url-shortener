@@ -9,6 +9,13 @@
       <div class="d-flex w-100 align-items-center row">
         <div class='col'>
           <h6>
+            <% if url.is_locked %>
+              <i
+                class="fa fa-lock text-danger"
+                data-toggle="tooltip" data-placement="top" title="Locked"
+              ></i>
+            <% end %>
+
             <%= url.title %>
           </h6>
 
