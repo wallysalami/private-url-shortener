@@ -41,6 +41,10 @@ h1 {
     border-color: #888;
 }
 
+.btn>i.fa:not(:last-child) {
+    margin-right: 10px;
+}
+
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
 }

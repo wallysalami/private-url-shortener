@@ -1,7 +1,5 @@
 <div class='d-flex w-100 mb-4 justify-content-center'>
-  <a id='add-url-button' class="btn btn-success" href="<%= new_shortened_url_path %>">
-      <i class="fa fa-plus"></i> &nbsp;Add URL
-  </a>
+  <%= bootstrap_button layout: 'success', icon: 'plus', label: 'Add URL', url: new_shortened_url_path %>
 </div>
 
 
@@ -13,8 +11,10 @@
           <h6>
             <%= url.title %>
           </h6>
+
           <small class='text-truncate'>
             /<%= url.short_uri %>
+
             <span class='hidden-sm-down'>
               <i class="fa fa-fw fa-arrow-right"></i> <%= link_to url.destination_url %>
             </span>
@@ -25,40 +25,27 @@
           <div>
             <%= pluralize(url.shortened_url_access.count, "access") %>
           </div>
+
           <% last_access_date = url.last_access_date %>
           <% if last_access_date != nil %>
-            <small class='hidden-sm-down'>
+            <small>
               last one on <%= I18n.l last_access_date.to_date, format: :long %>
             </small>
           <% end %>
         </div>
         
         <div class='url-list-buttons-container' style='margin-right: -15px;'>
-          <a 
-            class="btn btn-outline-secondary"
-            href="<%= shortened_url_path(url) %>"
-            data-toggle="tooltip" data-placement="top" title="View Details"
-          >
-            <i class="fa fa-search fa-lg"></i>
-          </a>
+          <%= bootstrap_button layout: 'outline-secondary', icon: 'search',
+            tooltip: 'View Details', url: shortened_url_path(url)
+          %>
           
-          
-          <a 
-            class="btn btn-outline-secondary hidden-xs-down"
-            href="<%= edit_shortened_url_path(url) %>"
-            data-toggle="tooltip" data-placement="top" title="Edit"
-          >
-            <i class="fa fa-pencil fa-lg"></i>
-          </a>
+          <%= bootstrap_button layout: 'outline-secondary', icon: 'pencil-square-o',
+             tooltip: 'Edit', url: edit_shortened_url_path(url)
+          %>
 
-          <a 
-            class="btn btn-outline-danger hidden-xs-down"
-            href="<%= shortened_url_path(url) %>"
-            data-toggle="tooltip" data-placement="top" title="Delete"
-            data-method="delete"
-          >
-            <i class="fa fa-trash-o fa-lg"></i>
-          </a>
+          <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'outline-danger', icon: 'trash-o', tooltip: 'Delete',
+            url: shortened_url_path(url), method: :delete, data: { confirm: 'Delete ' + url.title + '?' }
+          %>
         </div>
     </li>
   <% end %>

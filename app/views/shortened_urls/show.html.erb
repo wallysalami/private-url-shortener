@@ -47,12 +47,13 @@
           <% end %>
 
           <nav style='margin-top: 15px'>
-            <a class="btn btn-secondary" href="<%= edit_shortened_url_path(@shortened_url) %>">
-                <i class="fa fa-pencil fa-fw"></i> Edit
-            </a>
-            <a class="btn btn-danger" href="<%= edit_shortened_url_path(@shortened_url) %>">
-                <i class="fa fa-trash fa-fw"></i> Delete
-            </a>
+            <%= bootstrap_button layout: 'secondary', icon: 'pencil-square-o',
+               label: 'Edit', url: edit_shortened_url_path(@shortened_url)
+            %>
+
+            <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'danger', icon: 'trash-o', label: 'Delete',
+              url: shortened_url_path(@shortened_url), method: :delete, data: { confirm: 'Delete ' + @shortened_url.title + '?' }
+            %>
           </nav>
         </div>
 

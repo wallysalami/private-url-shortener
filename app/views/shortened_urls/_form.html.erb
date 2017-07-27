@@ -59,8 +59,13 @@
   </div>
 
   <div class='save-cancel-container'>
-      <%= form.submit 'Save', :class => "btn btn-primary" %>
-      <%= link_to 'Cancel', shortened_urls_path, :class => "btn btn-secondary" %>
+      <%= bootstrap_button submit: true, layout: 'primary', icon: 'check',
+        label: 'Save'
+      %>
+
+      <%= bootstrap_button layout: 'secondary', icon: 'times',
+        label: 'Cancel', url: shortened_urls_path
+      %>
   </div>
 <% end %>
 

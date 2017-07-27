@@ -13,7 +13,9 @@
           <%= password_field_tag :password, "", :class => "form-control" %>
         </div>
         
-        <%= submit_tag "Submit", :class => "btn btn-primary" %>
+        <%= bootstrap_button submit: true, layout: 'primary', icon: 'arrow-right',
+          label: 'Submit'
+        %>
       <% end %>
     </div>
   </div>
