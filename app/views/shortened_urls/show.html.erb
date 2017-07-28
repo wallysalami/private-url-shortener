@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><%= link_to 'Home', shortened_urls_path %></li>
+  <li class="breadcrumb-item"><%= link_to t(:home), shortened_urls_path %></li>
   <li class="breadcrumb-item active"><%= @shortened_url.title %></li>
 </ol>
 
@@ -28,30 +28,30 @@
         <div class='col-sm-8'>
           <% if @shortened_url.is_locked %>
             <div class='text-danger'>
-              <i class="fa fa-lock fa-fw"></i> URL Locked
+              <i class="fa fa-lock fa-fw"></i> <%= t :locked_url %>
             </div>
           <% else %>
             <div>
-              <i class="fa fa-unlock fa-fw"></i> URL Unlocked
+              <i class="fa fa-unlock fa-fw"></i> <%= t :unlocked_url %>
             </div>
           <% end %>
 
           <% if @shortened_url.show_preview_page %>
             <span>
-              <i class="fa fa-file-text-o fa-fw"></i> Shows Preview Page
+              <i class="fa fa-file-text-o fa-fw"></i> <%= t :shows_preview_page %>
             </span>
           <% else %>
             <span>
-              <i class="fa fa-times fa-fw"></i> No Preview Page
+              <i class="fa fa-times fa-fw"></i> <%= t :doesnt_show_preview_page %>
             </span>
           <% end %>
 
           <nav style='margin-top: 15px'>
             <%= bootstrap_button layout: 'secondary', icon: 'pencil-square-o',
-               label: 'Edit', url: edit_shortened_url_path(@shortened_url)
+               label: t(:edit), url: edit_shortened_url_path(@shortened_url)
             %>
 
-            <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'danger', icon: 'trash-o', label: 'Delete',
+            <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'danger', icon: 'trash-o', label: t(:delete),
               url: shortened_url_path(@shortened_url), method: :delete, data: { confirm: 'Delete ' + @shortened_url.title + '?' }
             %>
           </nav>
@@ -69,7 +69,7 @@
     <% @grouped_accesses.each do |access_on_current_date| %>
       <div class="card access-log-list">
         <div class="card-header sticky-top">
-          Accesses on <%= I18n.l access_on_current_date[:date], format: :long %>
+          <%=t :accesses_on, date: I18n.l(access_on_current_date[:date], format: :long) %>
         </div>
         <ol class="list-group list-group-flush">
           <% access_on_current_date[:accesses].each do |access| %>

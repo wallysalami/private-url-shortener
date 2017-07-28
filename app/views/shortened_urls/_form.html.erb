@@ -2,9 +2,9 @@
   <% if @shortened_url.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h4>
-        <%= pluralize(@shortened_url.errors.count, "validation error") %>:
+        <%=t :n_validation_errors, :count => @shortened_url.errors.count %>
       </h4>
-      <ul>
+      <ul class='mb-0'>
         <% @shortened_url.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
         <% end %>
@@ -14,18 +14,18 @@
 
   <div class='row'>
     <div class="form-group col-sm-4">
-      <%= form.label :title, 'Title', :class => "control-label" %>
+      <%= form.label :title, :class => "control-label" %>
       <%= form.text_field :title, :class => "form-control" %>
     </div>
     <div class="form-group col-sm-8">
-      <%= form.label :description, 'Description', :class => "control-label" %>
+      <%= form.label :description, :class => "control-label" %>
       <%= form.text_field :description, :class => "form-control" %>
     </div>
   </div>
 
   <div class='row'>
     <div class="form-group col-sm">
-      <%= form.label :short_uri, 'Short URI', class: 'control-label' %>
+      <%= form.label :short_uri, class: 'control-label' %>
       <div class="input-group">
         <span class="input-group-addon"><%= @host %> /</span>
         <%= form.text_field :short_uri, :class => "form-control" %>
@@ -42,29 +42,29 @@
     </div>
     
     <div class="form-group col-sm">
-      <%= form.label :destination_url, 'Destination URL', :class => "control-label" %>
+      <%= form.label :destination_url, :class => "control-label" %>
       <%= form.url_field :destination_url, :class => "form-control" %>
     </div>
   </div>
 
   <div class="form-check form-check-inline">
     <label class="form-check-label">
-      <%= form.check_box :is_locked, class: 'form-check-input' %> Locked
+      <%= form.check_box :is_locked, class: 'form-check-input' %> <%=t :is_locked, scope: [:activerecord, :attributes, :shortened_url] %>
     </label>
   </div>
   <div class="form-check form-check-inline">
     <label class="form-check-label">
-      <%= form.check_box :show_preview_page, class: 'form-check-input' %> Show Preview Page
+      <%= form.check_box :show_preview_page, class: 'form-check-input' %> <%=t :show_preview_page, scope: [:activerecord, :attributes, :shortened_url] %>
     </label>
   </div>
 
   <div class='save-cancel-container'>
       <%= bootstrap_button submit: true, layout: 'primary', icon: 'check',
-        label: 'Save'
+        label: t(:save)
       %>
 
       <%= bootstrap_button layout: 'secondary', icon: 'times',
-        label: 'Cancel', url: shortened_urls_path
+        label: t(:cancel), url: shortened_urls_path
       %>
   </div>
 <% end %>

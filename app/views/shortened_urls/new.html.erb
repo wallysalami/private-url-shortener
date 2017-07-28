@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><%= link_to 'Home', shortened_urls_path %></li>
-  <li class="breadcrumb-item active">New URL</li>
+  <li class="breadcrumb-item"><%= link_to t(:home), shortened_urls_path %></li>
+  <li class="breadcrumb-item active"><%=t :add_url %></li>
 </ol>
 
 <%= render 'form' %>

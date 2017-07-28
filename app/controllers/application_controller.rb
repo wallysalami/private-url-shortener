@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery with: :exception
 
+  before_action :set_locale
+  def set_locale
+    I18n.locale = 'en'
+  end
+
   def index
     if current_user == nil
       redirect_to '/login'

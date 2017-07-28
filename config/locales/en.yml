@@ -30,4 +30,43 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  access_url: 'Access'
+  
+  login: 'Login'
+  logout: 'Logout'
+  username: 'Username'
+  password: 'Password'
+  submit: 'Submit'
+  
+  home: 'Home'
+  add_url: 'Add URL'
+  edit: 'Edit'
+  delete: 'Delete'
+  save: 'Save'
+  cancel: 'Cancel'
+  access:
+    one: "1 access"
+    other: "%{count} accesses"
+  last_access: "last access on %{date}"
+  accesses_on: "Accesses on %{date}"
+  view_details: 'View Details'
+  delete_with_title: "Delete %{title}?"
+  locked_url: 'Locked URL'
+  unlocked_url: 'Unlocked URL'
+  shows_preview_page: 'Shows preview page'
+  doesnt_show_preview_page: "No preview page"
+  n_validation_errors:
+    one: "1 validation error"
+    other: "%{count} validation errors"
+
+  activerecord:
+    models:
+      shortened_url: 'shortened url'
+    attributes:
+      shortened_url:
+        title: 'Title'
+        description: 'Description'
+        short_uri: 'Relative Path'
+        destination_url: 'URL de Destino'
+        is_locked: 'Locked'
+        show_preview_page: 'Show Preview Page'
