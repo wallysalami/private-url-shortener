@@ -1,7 +1,7 @@
 class RedirectController < ApplicationController
   def index
     # fullpath starts with /, :short_uri doesn't
-    @url = ShortenedUrl.find_by(:short_uri => request.fullpath[1..-1])
+    @url = ShortenedUrl.where('LOWER(short_uri) = ?', request.fullpath[1..-1].downcase).first
 
     if @url
       if @url.is_locked || @url.show_preview_page
