@@ -1,0 +1,11 @@
+{
+  "name": "Private URL Shortener",
+  "description": "A url shortener built with Ruby on Rails",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/wallysalami/private-url-shortener",
+  "keywords": ["ruby", "rails" ],
+  "addons": [ "heroku-postgresql" ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
