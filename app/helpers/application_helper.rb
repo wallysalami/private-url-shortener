@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def bootstrap_button (url: nil, layout: 'secondary', label: '', submit: false, icon: nil, tooltip: nil, method: nil, data: [], class_name: '')
+  def bootstrap_button (url: nil, layout: 'secondary', label: '', submit: false, icon: nil, tooltip: nil, method: nil, data: [], id: '', class_name: '')
     html_options = {}
     
     if url != nil 
@@ -26,6 +26,7 @@ module ApplicationHelper
 
     html_options['method'] = method
     html_options['data'] = data
+    html_options['id'] = id
       
     if submit
       html_options['type'] = 'submit'

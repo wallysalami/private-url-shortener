@@ -20,7 +20,7 @@
         </div>
       <% else %>
         <%= bootstrap_button layout: 'primary', icon: 'arrow-right',
-            label: t(:access_url), url: @url.destination_url
+            label: t(:access_url), url: @url.destination_url, id: 'destination-link'
         %>
       <% end %>
     </div>
