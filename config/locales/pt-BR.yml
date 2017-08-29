@@ -9,6 +9,7 @@ pt-BR:
   submit: 'Enviar'
   
   home: 'Início'
+  my_urls: 'Meus URLs'
   add_url: 'Adicionar URL'
   edit: 'Editar'
   delete: 'Remover'

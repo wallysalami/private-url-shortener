@@ -23,4 +23,8 @@ class ApplicationController < ActionController::Base
   def check_logged_user
     redirect_to '/login' unless current_user
   end
+
+  def page_title
+    request.host
+  end
 end

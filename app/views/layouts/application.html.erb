@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>URL Shortener</title>
+    <title><%= yield(:page_title) %></title>
     <%= csrf_meta_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <%= favicon_link_tag 'favicon.png' %>
+    <meta property="og:image" content="<%= image_url('favicon.png')%>" />
+    <meta property="og:title" content="<%= yield(:og_title) %>"/>
+    <meta property="og:description" content="<%= yield(:og_description) %>" />
+    <meta name="description" content="<%= yield(:og_description) %>" />
+		
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

@@ -39,6 +39,7 @@ en:
   submit: 'Submit'
   
   home: 'Home'
+  my_urls: 'My URLs'
   add_url: 'Add URL'
   edit: 'Edit'
   delete: 'Delete'

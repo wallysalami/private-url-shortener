@@ -1,7 +1,8 @@
+<% content_for :page_title, page_title_for_admin('') %>
+
 <div class='d-flex w-100 mb-4 justify-content-center'>
   <%= bootstrap_button layout: 'success', icon: 'plus', label: t(:add_url), url: new_shortened_url_path %>
 </div>
-
 
 <ol class="list-group">
   <% @shortened_urls.each do |url| %>

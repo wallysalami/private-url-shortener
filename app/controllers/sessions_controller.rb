@@ -28,4 +28,9 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
+  def page_title
+    t(:login) + ' | ' +  super
+  end
+  helper_method :page_title
+
 end

@@ -20,4 +20,9 @@ class RedirectController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     end
   end
+
+  def page_title_for_url(shortened_url)
+    shortened_url.title + ' | ' +  page_title
+  end
+  helper_method :page_title_for_url
 end

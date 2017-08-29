@@ -1,3 +1,5 @@
+<% content_for :page_title, page_title_for_admin(@shortened_url.title + ' - ' + t(:edit)) %>
+
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><%= link_to t(:home), shortened_urls_path %></li>
   <li class="breadcrumb-item active"><%= link_to @shortened_url.title, shortened_url_path(@shortened_url) %>

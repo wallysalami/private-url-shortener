@@ -59,6 +59,19 @@ class ShortenedUrlsController < ApplicationController
     redirect_to shortened_urls_path
   end
 
+  def page_title_for_admin(main_title)
+    if main_title == ''
+      page_title
+    else
+      main_title + ' | ' +  page_title
+    end
+  end
+  helper_method :page_title_for_admin
+
+  def page_title
+    t(:my_urls) + ' | ' +  super
+  end
+
   private
   
   def shortened_url_params

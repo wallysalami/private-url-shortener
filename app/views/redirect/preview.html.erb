@@ -1,3 +1,7 @@
+<% content_for :page_title, page_title_for_url(@url) %>
+<% content_for :og_title, @url.title %>
+<% content_for :og_description, @url.description %>
+
 <div class='d-flex justify-content-center align-items-center'>
   <div style='min-width: 280px; max-width: 700px' class='card m-5'>
     <div class="card-block">
