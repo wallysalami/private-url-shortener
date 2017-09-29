@@ -58,8 +58,26 @@ h1 {
     display: block;
 }
 
-#center-container {
-    width: 100%;
+/* I had to make these changes to support the iPhone X notch */
+#main-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* I had to make these changes to support the iPhone X notch */
+#center-container
+{
+    width: calc(100% - 2rem);
     max-width: 1000px;
-    flex: 1;
+    margin-left: constant(safe-area-inset-left);
+    margin-right: constant(safe-area-inset-right);
+}
+
+#logo
+{
+    margin-left: constant(safe-area-inset-left);
+}
+
+#logout-button
+{
+    margin-right: constant(safe-area-inset-right);
 }
