@@ -64,11 +64,17 @@
     margin-right: 10px; 
 }
 
-dt.shortened-url-title>h1 {
+dt.shortened-url-title>h4 {
     margin-bottom: 0px;
 }
 
-dd.shortened-url-description {
+#shortened-url-info dd.shortened-url-description {
+    margin-top: 3px !important;
+    margin-bottom: 0px;
+}
+
+#shortened-url-preview dd.shortened-url-description {
+    margin-top: 8px !important;
     margin-bottom: 0px;
 }
 

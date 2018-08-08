@@ -21,10 +21,10 @@
           </h6>
 
           <small class='text-truncate'>
-            /<%= url.short_uri %>
+            <%= link_to "/" + url.short_uri, "/" + url.short_uri%>
 
             <span class='hidden-sm-down'>
-              <i class="fa fa-fw fa-arrow-right"></i> <%= link_to url.destination_url %>
+              <i class="fa fa-fw fa-arrow-right"></i> <%= link_to url.destination_url, url.destination_url %>
             </span>
           </small>
         </div>

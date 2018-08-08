@@ -10,7 +10,7 @@
     <div class='sticky-top card card-block' id='shortened-url-info'>
       <dl>
         <dt class='shortened-url-title'>
-          <h1><%= @shortened_url.title %></h1>
+          <h4><%= @shortened_url.title %></h4>
         </dt>
         <dd class='shortened-url-description'>
           <%= @shortened_url.description %>
@@ -19,7 +19,7 @@
 
       <div class="shortened-url-links">
         <div>
-           <%= @base_url + '/' + @shortened_url.short_uri %>
+           <%= link_to @base_url + '/' + @shortened_url.short_uri, '/' + @shortened_url.short_uri %>
         </div>
         <div class='text-truncate'>
           <i class="fa fa-fw fa-share fa-flip-vertical"></i> <%= link_to @shortened_url.destination_url %>

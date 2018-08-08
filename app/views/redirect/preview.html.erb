@@ -4,10 +4,10 @@
 
 <div class='d-flex justify-content-center align-items-center'>
   <div style='min-width: 280px; max-width: 700px' class='card m-5'>
-    <div class="card-block">
+    <div class="card-block" id='shortened-url-preview'>
       <dl>
         <dt class='shortened-url-title'>
-          <h1><%= @url.title %></h1>
+          <h4><%= @url.title %></h4>
         </dt>
         <dd class='shortened-url-description mt-3'>
           <%= @url.description %>
