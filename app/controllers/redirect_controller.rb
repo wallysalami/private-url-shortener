@@ -6,7 +6,7 @@ class RedirectController < ApplicationController
     if @url
       if @url.is_locked || @url.show_preview_page
         # :formats prevents an error if path ends with some extension (like .zip)
-        render 'redirect/preview', :formats => 'html'
+        render 'preview', formats: [:html], handlers: [:erb]
       else
         redirect_to @url.destination_url
       end
