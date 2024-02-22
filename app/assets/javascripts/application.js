@@ -16,6 +16,7 @@
 //= require jquery
 //= require tether
 //= require bootstrap
+//= require qrcode
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
