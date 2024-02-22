@@ -29,7 +29,7 @@
           </small>
         </div>
 
-        <div class='hidden-xs-down px-2' style='text-align: right'>
+        <div class='d-none d-sm-block px-2' style='text-align: right'>
           <div>
             <%=t :access, :count => url.shortened_url_access.count %>
           </div>
@@ -51,7 +51,7 @@
              tooltip: t(:edit), url: edit_shortened_url_path(url)
           %>
 
-          <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'outline-danger', icon: 'trash-o', tooltip: t(:delete),
+          <%= bootstrap_button class_name: 'd-none d-sm-inline', layout: 'outline-danger', icon: 'trash-o', tooltip: t(:delete),
             url: shortened_url_path(url), method: :delete, data: { confirm: t(:delete_with_title, title: url.title) }
           %>
         </div>

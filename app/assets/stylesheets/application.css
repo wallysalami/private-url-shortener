@@ -11,10 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require bootstrap.min
  *= require font-awesome
  *= require_self
  */
+
+@import 'bootstrap';
 
 html {
    height: 100%;
@@ -32,6 +33,14 @@ h1 {
 
 .list-group-flush {
     margin-top: -1px;
+}
+
+.list-group-item {
+    display: flex;
+}
+
+.card-block {
+    padding: 1.25em;
 }
 
 .btn-outline-secondary,

@@ -27,17 +27,19 @@
     <div class="form-group col-sm">
       <%= form.label :short_uri, class: 'control-label' %>
       <div class="input-group">
-        <span class="input-group-addon"><%= @host %> /</span>
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= @host %> /</span>
+        </div>
         <%= form.text_field :short_uri, :class => "form-control" %>
-        <span class="input-group-btn">
-          <button
-            id='generate-random-uri-button'
-            class="btn btn-secondary" type="button"
-            data-toggle="tooltip" data-placement="top" title="Random"
-          >
-            <i class='fa fa-random'></i>
-          </button>
-        </span>
+        <div class="input-group-append">
+            <button
+              id='generate-random-uri-button'
+              class="btn btn-outline-secondary" type="button"
+              data-toggle="tooltip" data-placement="top" title="Random"
+            >
+              <i class='fa fa-random'></i>
+            </button>
+        </div>
       </div>
     </div>
     

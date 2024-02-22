@@ -49,17 +49,17 @@
           <% end %>
 
           <nav style='margin-top: 15px'>
-            <%= bootstrap_button layout: 'secondary', icon: 'pencil-square-o',
+            <%= bootstrap_button layout: 'outline-secondary', icon: 'pencil-square-o',
                label: t(:edit), url: edit_shortened_url_path(@shortened_url)
             %>
 
-            <%= bootstrap_button class_name: 'hidden-xs-down', layout: 'danger', icon: 'trash-o', label: t(:delete),
+            <%= bootstrap_button layout: 'danger', icon: 'trash-o', label: t(:delete),
               url: shortened_url_path(@shortened_url), method: :delete, data: { confirm: 'Delete ' + @shortened_url.title + '?' }
             %>
           </nav>
         </div>
 
-        <div class='col-sm-4 hidden-xs-down' style='text-align: right'>
+        <div class='col-sm-4 d-none d-sm-block' style='text-align: right'>
           <div class='d-inline-block' id='qr-code-div'></div>
         </div>
       </div>
@@ -77,7 +77,7 @@
           <% access_on_current_date[:accesses].each do |access| %>
             <li class="list-group-item">
               <div class="access-time-column"> 
-                <%= time_tag access.created_at, access.created_at.strftime("%H:%M"), class: "badge badge-pill badge-default access-time"%>
+                <%= time_tag access.created_at, access.created_at.strftime("%H:%M"), class: "badge badge-pill badge-secondary access-time"%>
               </div>
 
               <div class="col access-other-info-column">
