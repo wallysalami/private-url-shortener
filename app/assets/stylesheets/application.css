@@ -60,6 +60,15 @@ h1 {
     display: block;
 }
 
+.form-check-input {
+    margin-top: 0.4em;
+}
+
+.btn-secondary, .btn-secondary:hover,
+.btn-outline-secondary, .btn-outline-secondary:hover {
+    color: #292b2c;
+}
+
 #center-container {
     width: 100%;
     max-width: 1000px;

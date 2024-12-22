@@ -27,9 +27,7 @@
     <div class="form-group col-sm">
       <%= form.label :short_uri, class: 'control-label' %>
       <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><%= @host %> /</span>
-        </div>
+        <span class="input-group-addon"><%= @host %> /</span>
         <%= form.text_field :short_uri, :class => "form-control" %>
         <div class="input-group-append">
             <button

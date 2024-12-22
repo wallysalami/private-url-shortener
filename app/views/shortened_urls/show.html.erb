@@ -77,7 +77,7 @@
           <% access_on_current_date[:accesses].each do |access| %>
             <li class="list-group-item">
               <div class="access-time-column"> 
-                <%= time_tag access.created_at, access.created_at.strftime("%H:%M"), class: "badge badge-pill badge-secondary access-time"%>
+                <%= time_tag access.created_at, access.created_at.strftime("%H:%M"), class: "badge badge-pill badge-default access-time"%>
               </div>
 
               <div class="col access-other-info-column">
