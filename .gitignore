@@ -24,3 +24,8 @@
 
 # Ignore environment file
 /config/local_env.yml
+
+# Ignore vendor folder (local gems)
+/vendor/*
+
+.DS_Store
