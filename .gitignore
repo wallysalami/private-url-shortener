@@ -24,8 +24,13 @@
 
 # Ignore environment file
 /config/local_env.yml
+/config/credentials.yml.enc
 
 # Ignore vendor folder (local gems)
 /vendor/*
 
+# Precompiled assets (generated in production)
+/public/assets
+
+# Mac .DS_Store files
 .DS_Store
