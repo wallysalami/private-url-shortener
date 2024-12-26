@@ -25,6 +25,7 @@
 # Ignore environment file
 /config/local_env.yml
 /config/credentials.yml.enc
+/config/master.key
 
 # Ignore vendor folder (local gems)
 /vendor/*
