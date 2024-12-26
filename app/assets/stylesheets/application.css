@@ -11,10 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require bootstrap.min
  *= require font-awesome
  *= require_self
  */
+
+@import 'bootstrap';
 
 html {
    height: 100%;
@@ -34,11 +35,12 @@ h1 {
     margin-top: -1px;
 }
 
-.btn-outline-secondary,
-.btn-outline-secondary:hover,
-.btn-secondary.dropdown-toggle {
-    color: #555;
-    border-color: #888;
+.list-group-item {
+    display: flex;
+}
+
+.card-block {
+    padding: 1.25em;
 }
 
 .btn>i.fa:not(:last-child) {
@@ -56,6 +58,15 @@ h1 {
 .text-truncate {
     width: 100%;
     display: block;
+}
+
+.form-check-input {
+    margin-top: 0.4em;
+}
+
+.btn-secondary, .btn-secondary:hover,
+.btn-outline-secondary, .btn-outline-secondary:hover {
+    color: #292b2c;
 }
 
 #center-container {

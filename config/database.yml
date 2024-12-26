@@ -11,6 +11,7 @@ default: &default
   pool: 5
   schema_search_path: <%= ENV.fetch("POSTGRES_SCHEMA") { "public" } %>
   username: <%= ENV.fetch("POSTGRES_USERNAME") { "postgres" } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
 
 development:
   <<: *default

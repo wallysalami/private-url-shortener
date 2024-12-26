@@ -14,9 +14,9 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
-//= require tether.min
-//= require bootstrap.min
-//= require qrcode.min
+//= require tether
+//= require bootstrap
+//= require qrcode
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()

@@ -29,15 +29,15 @@
       <div class="input-group">
         <span class="input-group-addon"><%= @host %> /</span>
         <%= form.text_field :short_uri, :class => "form-control" %>
-        <span class="input-group-btn">
-          <button
-            id='generate-random-uri-button'
-            class="btn btn-secondary" type="button"
-            data-toggle="tooltip" data-placement="top" title="Random"
-          >
-            <i class='fa fa-random'></i>
-          </button>
-        </span>
+        <div class="input-group-append">
+            <button
+              id='generate-random-uri-button'
+              class="btn btn-outline-secondary" type="button"
+              data-toggle="tooltip" data-placement="top" title="Random"
+            >
+              <i class='fa fa-random'></i>
+            </button>
+        </div>
       </div>
     </div>
     
@@ -63,7 +63,7 @@
         label: t(:save)
       %>
 
-      <%= bootstrap_button layout: 'secondary', icon: 'times',
+      <%= bootstrap_button layout: 'outline-secondary', icon: 'times',
         label: t(:cancel), url: shortened_urls_path
       %>
   </div>
