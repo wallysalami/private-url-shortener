@@ -57,4 +57,6 @@ preload_app!
 plugin :tmp_restart
 
 # Connection with UNIX socket
-bind ENV.fetch("PUMA_SOCKET") {"unix:///var/run/puma/url_shortener.sock"}
+if ENV["PUMA_SOCKET"] && !ENV["PUMA_SOCKET"].empty?
+  bind ENV["PUMA_SOCKET"]
+end
