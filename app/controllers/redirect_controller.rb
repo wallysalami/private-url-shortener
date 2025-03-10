@@ -8,7 +8,7 @@ class RedirectController < ApplicationController
         # :formats prevents an error if path ends with some extension (like .zip)
         render 'preview', formats: [:html], handlers: [:erb]
       else
-        redirect_to @url.destination_url
+        redirect_to(@url.destination_url, allow_other_host: true)
       end
       
       # since register_access looks for the IP data on the internet,
